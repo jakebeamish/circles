@@ -26,14 +26,17 @@ function draw() {
     }
   }
   let x = n.dist(createVector(width/2, height/2));
-  if (!overlapping && x < 200) circles.push(new Circle(n.x, n.y));
+  if (!overlapping && x < width * 0.3) {
+     circles.push(new Circle(n.x, n.y));
+     console.log(circles.length);
+  }
 
 }
 
 class Circle {
   constructor(x, y) {
     this.pos = createVector(x, y);
-    this.rad = 15;
+    this.rad = 5;
   }
 
   show() {
